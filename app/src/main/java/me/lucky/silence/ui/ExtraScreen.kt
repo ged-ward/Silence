@@ -27,7 +27,7 @@ fun ExtraScreen(prefs: Preferences, onBackPressed: () -> Boolean) {
             getValue = { prefs.extra.has(Extra.CONTACTS) },
             setValue = { isChecked ->
                 prefs.setExtra(Extra.CONTACTS, isChecked)
-                if (!isChecked) requestContactsPermissions()
+                if (isChecked) requestContactsPermissions()
             },
             name = R.string.extra_contacts,
             description = R.string.extra_contacts_description,
